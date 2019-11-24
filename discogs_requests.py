@@ -95,13 +95,13 @@ class DiscogsInstance(object):
             current_parsed = json.loads(current_soup)
 
             if index_page == number_pages-1:
-                for index_item in range(items%per_page):
+                for index_item in range(items % per_page):
                     real_index = index_item + per_page*index_page
-                    list_releases_id[real_index] = current_parsed['releases'][real_index]['id']
+                    list_releases_id[real_index] = current_parsed['releases'][index_item]['id']
             else:
                 for index_item in range(per_page):
                     real_index = index_item + per_page*index_page
-                    list_releases_id[real_index] = current_parsed['releases'][real_index]['id']
+                    list_releases_id[real_index] = current_parsed['releases'][index_item]['id']
 
         return list_releases_id
 
@@ -109,7 +109,7 @@ class DiscogsInstance(object):
 
         for user_name in self.users_list:
             user_id = self.dict_users[user_name]
-            self.collection_list[user_id] = self.user_collection_without_api(user_name)
+            self.collection_list[user_id] = self.user_collection_ids(user_name)
 
         return self.collection_list
 
@@ -129,7 +129,7 @@ class DiscogsInstance(object):
                     self.u2u_matrix[row, column] = len(commonalities)
 
 
-fake_users_list = ['thomzoy', 'Diognes_The_Fox']
+fake_users_list = ['thomzoy', 'mkvMafia', 'arli2001']
 
 disco = DiscogsInstance()
 disco.init_client()
@@ -137,3 +137,4 @@ disco.init_users_list(fake_users_list)
 disco.build_collection_list()
 disco.build_user_matrix()
 print(disco.u2u_matrix)
+print()
