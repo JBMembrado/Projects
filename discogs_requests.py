@@ -7,6 +7,7 @@ import json
 import pickle
 import os
 
+
 class DiscogsInstance(object):
 
     def __init__(self):
@@ -25,28 +26,44 @@ class DiscogsInstance(object):
         self.list_ids = None
 
     def init_client(self):
+        """
+        Initiates a Discogs API Client with the user_agent and the user_token
+        """
         self.dsc = discogs_client.Client(self.user_agent, user_token=self.user_token)
 
     def search_release(self, release_id):
-        # epiphany = 14002052
+        """
+        Searching a specific release via the Discogs API
+        :param release_id: the id of the release
+        """
         self.last_search = self.dsc.release(release_id)
 
-    def search_user_url(self, user_id):
-        # thomzoy
-        self.last_search = self.dsc.user(user_id)
+    def search_user_url(self, user_name):
+        """
+        Searching a specific user via the Discogs API
+        :param user_name: the name of the specified user
+        :return: the parsed data url corresponding to that user
+        """
+        self.last_search = self.dsc.user(user_name)
         page = urlopen(self.last_search.data['resource_url'])
         soup = BeautifulSoup(page, "html.parser").encode('UTF-8')
         parsed = json.loads(soup)
 
         return parsed
 
-    def init_recursion(self, user_id):
-
-        self.last_search = self.dsc.user(user_id)
+    def init_recursion(self, user_name):
+        """
+        Initiating the recursive exploration
+        :param user_name: the name of the specified user
+        """
+        self.last_search = self.dsc.user(user_name)
         self.current_url = self.last_search.collection_folders[0].releases.url
 
     def recursive_exploration(self):
-
+        """
+        Explores all the pages of the collection of the current user recursively
+        :return: a boolean being True if there is another collection page, False if it was the last one
+        """
         page = urlopen(self.current_url)
         soup = BeautifulSoup(page, "html.parser").encode('UTF-8')
         parsed_releases = json.loads(soup)
@@ -68,7 +85,11 @@ class DiscogsInstance(object):
         return there_is_next
 
     def user_collection_recursive(self, user_name):
-
+        """
+        A method trying to implement a recursion-based model to cycle over all the pages of the items collection
+        :param user_name: the name of the specified user
+        :return: the list of ids of the collection of the user
+        """
         self.init_recursion(user_name)
         list_ids = []
 
@@ -78,7 +99,11 @@ class DiscogsInstance(object):
         return list_ids
 
     def get_50_items(self, user_name):
-
+        """
+        Gets the first 50 items ids of the collection of the specified user.
+        :param user_name: the name of the specified user
+        :return: the list of items ids
+        """
         print(user_name)
 
         self.current_url = 'https://api.discogs.com/users/' + user_name + '/collection/folders/0/releases'
@@ -105,6 +130,11 @@ class DiscogsInstance(object):
         return self.list_ids
 
     def init_users_list(self, users_list):
+        """
+        Initiates a users dictionary to make the correspondance between users names and indexes.
+        Also initiates the users-to-users matrix
+        :param users_list: the list of users names we want to treat
+        """
         self.users_list = users_list
         self.number_users = len(users_list)
         self.collection_list = [0]*self.number_users
@@ -115,6 +145,11 @@ class DiscogsInstance(object):
 
     @staticmethod
     def user_collection_without_api(user_name):
+        """
+        Retrieves all the items in the collection of the specified user.
+        :param user_name: the name of the specified user
+        :return: the list of all the releases in the user's collection
+        """
         url_to_go = 'https://api.discogs.com/users/' + user_name +'/collection/folders/0/releases'
         page = urlopen(url_to_go)
         soup = BeautifulSoup(page, "html.parser").encode('UTF-8')
@@ -138,6 +173,11 @@ class DiscogsInstance(object):
 
     @staticmethod
     def user_collection_ids(user_name):
+        """
+        Retrieves the ids of all items within the collection of the specified user.
+        :param user_name: the name of the user we want to get the items ids of
+        :return: the list of ids for the items in the collection of the specified user
+        """
         url_to_go = 'https://api.discogs.com/users/' + user_name + '/collection/folders/0/releases'
         page = urlopen(url_to_go)
         soup = BeautifulSoup(page, "html.parser").encode('UTF-8')
@@ -168,7 +208,10 @@ class DiscogsInstance(object):
         return list_releases_id
 
     def build_collection_list(self):
-
+        """
+        Builds the list of all inventories of the users listed in the users_list
+        :return: the list of all inventories of the users in the users_list
+        """
         for user_name in self.users_list:
             user_id = self.dict_users[user_name]
             self.collection_list[user_id] = self.get_50_items(user_name)
@@ -176,7 +219,10 @@ class DiscogsInstance(object):
         return self.collection_list
 
     def build_user_matrix(self):
-
+        """
+        Builds the user-to-user matrix.
+        Each cell is the number of common releases between the collections of two users.
+        """
         for row in range(self.number_users):
             for column in range(self.number_users):
 
@@ -191,7 +237,10 @@ class DiscogsInstance(object):
                     self.u2u_matrix[row, column] = len(commonalities)
 
     def load_list_contributors(self, path):
-
+        """
+        Loads the pickel file containing the names of the top 5000 Discogs contributors.
+        :param path: path to the pickle file
+        """
         print(os.getcwd() + '/../' + path)
         with open(os.getcwd() + '/../' + path, 'rb') as input_file:
             self.users_list = pickle.load(input_file)
@@ -201,10 +250,10 @@ class DiscogsInstance(object):
 
 # fake_users_list = ['thomzoy', 'mkvMafia', 'arli2001']
 
-disco = DiscogsInstance()
-disco.load_list_contributors('contributors.pickle')
-disco.init_client()
-disco.build_collection_list()
-disco.build_user_matrix()
-print(disco.u2u_matrix)
-print()
+# disco = DiscogsInstance()
+# disco.load_list_contributors('contributors.pickle')
+# disco.init_client()
+# disco.build_collection_list()
+# disco.build_user_matrix()
+# print(disco.u2u_matrix)
+# print()
