@@ -1,5 +1,6 @@
 import discogs_client
 import numpy as np
+import urllib
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import json
@@ -80,16 +81,26 @@ class DiscogsInstance(object):
 
         print(user_name)
 
-        url_to_go = 'https://api.discogs.com/users/' + user_name + '/collection/folders/0/releases'
-        self.current_url = urlopen(url_to_go)
-        page = urlopen(self.current_url)
-        soup = BeautifulSoup(page, "html.parser").encode('UTF-8')
-        list_releases = json.loads(soup)['releases']
+        self.current_url = 'https://api.discogs.com/users/' + user_name + '/collection/folders/0/releases'
 
-        self.list_ids = [0]*len(list_releases)
+        try:
+            page = urlopen(self.current_url)
+            has_been_opened = True
 
-        for index_release, release in enumerate(list_releases):
-            self.list_ids[index_release] = release['id']
+        except urllib.error.HTTPError:
+            print('This User has a private collection')
+            has_been_opened = False
+
+        if has_been_opened:
+            soup = BeautifulSoup(page, "html.parser").encode('UTF-8')
+            list_releases = json.loads(soup)['releases']
+
+            self.list_ids = [0]*len(list_releases)
+
+            for index_release, release in enumerate(list_releases):
+                self.list_ids[index_release] = release['id']
+        else:
+            self.list_ids = []
 
         return self.list_ids
 
@@ -127,7 +138,7 @@ class DiscogsInstance(object):
 
     @staticmethod
     def user_collection_ids(user_name):
-        url_to_go = 'https://api.discogs.com/users/' + user_name +'/collection/folders/0/releases'
+        url_to_go = 'https://api.discogs.com/users/' + user_name + '/collection/folders/0/releases'
         page = urlopen(url_to_go)
         soup = BeautifulSoup(page, "html.parser").encode('UTF-8')
         parsed = json.loads(soup)
@@ -187,8 +198,8 @@ class DiscogsInstance(object):
 
         self.init_users_list(self.users_list)
 
-# fake_users_list = ['thomzoy', 'mkvMafia', 'arli2001']
 
+# fake_users_list = ['thomzoy', 'mkvMafia', 'arli2001']
 
 disco = DiscogsInstance()
 disco.load_list_contributors('contributors.pickle')
