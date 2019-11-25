@@ -39,6 +39,5 @@ A useful feature of Discogs is its API along with a Python plugin that allows to
 2. Discuss data story main orientation and poster possibilities.
 3. Start experimenting with clustering methods such as K-Means to identify groups of Discogs users for final milestone.
 
-## Questions for TAa
-* Would it be possible to upload our dataset on the ada cluster to simplify our future work, especially in the clustering phase?
-* Are there any copyright rules when using albums and artists pictures or representations?
+## Milestone 2
+The Jupiter notebook for the ADA Milestone 2 is named "Discogs_Masters".
