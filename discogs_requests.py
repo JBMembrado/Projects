@@ -3,7 +3,8 @@ import numpy as np
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import json
-
+import pickle
+import os
 
 class DiscogsInstance(object):
 
@@ -19,6 +20,8 @@ class DiscogsInstance(object):
         self.collection_list = None
         self.users_list = None
         self.u2u_matrix = None
+        self.current_url = None
+        self.list_ids = None
 
     def init_client(self):
         self.dsc = discogs_client.Client(self.user_agent, user_token=self.user_token)
@@ -36,11 +39,59 @@ class DiscogsInstance(object):
 
         return parsed
 
-    def search_user_inventory(self, user_id):
-        # thomzoy
+    def init_recursion(self, user_id):
+
         self.last_search = self.dsc.user(user_id)
-        inventory = self.last_search.inventory
-        print(inventory.url)
+        self.current_url = self.last_search.collection_folders[0].releases.url
+
+    def recursive_exploration(self):
+
+        page = urlopen(self.current_url)
+        soup = BeautifulSoup(page, "html.parser").encode('UTF-8')
+        parsed_releases = json.loads(soup)
+
+        # check if there is a next page, or if it is the last page
+        if 'next' in parsed_releases['pagination']['urls']:
+            there_is_next = True
+            self.current_url = parsed_releases['pagination']['urls']['next']
+        else:
+            there_is_next = False
+
+        list_releases = parsed_releases['releases']
+
+        self.list_ids = [0]*len(list_releases)
+
+        for index_release, release in enumerate(list_releases):
+            self.list_ids[index_release] = release['id']
+
+        return there_is_next
+
+    def user_collection_recursive(self, user_name):
+
+        self.init_recursion(user_name)
+        list_ids = []
+
+        while self.recursive_exploration():
+            list_ids = list_ids + self.list_ids
+
+        return list_ids
+
+    def get_50_items(self, user_name):
+
+        print(user_name)
+
+        url_to_go = 'https://api.discogs.com/users/' + user_name + '/collection/folders/0/releases'
+        self.current_url = urlopen(url_to_go)
+        page = urlopen(self.current_url)
+        soup = BeautifulSoup(page, "html.parser").encode('UTF-8')
+        list_releases = json.loads(soup)['releases']
+
+        self.list_ids = [0]*len(list_releases)
+
+        for index_release, release in enumerate(list_releases):
+            self.list_ids[index_release] = release['id']
+
+        return self.list_ids
 
     def init_users_list(self, users_list):
         self.users_list = users_list
@@ -109,7 +160,7 @@ class DiscogsInstance(object):
 
         for user_name in self.users_list:
             user_id = self.dict_users[user_name]
-            self.collection_list[user_id] = self.user_collection_ids(user_name)
+            self.collection_list[user_id] = self.get_50_items(user_name)
 
         return self.collection_list
 
@@ -128,12 +179,20 @@ class DiscogsInstance(object):
                     commonalities = set(row_list) - (set(row_list) - set(col_list))
                     self.u2u_matrix[row, column] = len(commonalities)
 
+    def load_list_contributors(self, path):
 
-fake_users_list = ['thomzoy', 'mkvMafia', 'arli2001']
+        print(os.getcwd() + '/../' + path)
+        with open(os.getcwd() + '/../' + path, 'rb') as input_file:
+            self.users_list = pickle.load(input_file)
+
+        self.init_users_list(self.users_list)
+
+# fake_users_list = ['thomzoy', 'mkvMafia', 'arli2001']
+
 
 disco = DiscogsInstance()
+disco.load_list_contributors('contributors.pickle')
 disco.init_client()
-disco.init_users_list(fake_users_list)
 disco.build_collection_list()
 disco.build_user_matrix()
 print(disco.u2u_matrix)
