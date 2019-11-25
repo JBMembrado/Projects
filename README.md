@@ -38,6 +38,3 @@ A useful feature of Discogs is its API along with a Python plugin that allows to
 1. Clean the code and standardize both plots and results.
 2. Discuss data story main orientation and poster possibilities.
 3. Start experimenting with clustering methods such as K-Means to identify groups of Discogs users for final milestone.
-
-## Milestone 2
-The Jupiter notebook for the ADA Milestone 2 is named "Discogs_Masters".
