@@ -238,22 +238,23 @@ class DiscogsInstance(object):
 
     def load_list_contributors(self, path):
         """
-        Loads the pickel file containing the names of the top 5000 Discogs contributors.
+        Loads the pickle file containing the names of the top 5000 Discogs contributors.
         :param path: path to the pickle file
         """
-        print(os.getcwd() + '/../' + path)
-        with open(os.getcwd() + '/../' + path, 'rb') as input_file:
+        print(os.getcwd() + '/' + path)
+        with open(os.getcwd() + '/' + path, 'rb') as input_file:
             self.users_list = pickle.load(input_file)
 
         self.init_users_list(self.users_list)
 
 
-# fake_users_list = ['thomzoy', 'mkvMafia', 'arli2001']
+fake_users_list = ['thomzoy', 'mkvMafia', 'arli2001']
 
-# disco = DiscogsInstance()
-# disco.load_list_contributors('contributors.pickle')
-# disco.init_client()
-# disco.build_collection_list()
-# disco.build_user_matrix()
-# print(disco.u2u_matrix)
-# print()
+disco = DiscogsInstance()
+disco.load_list_contributors('contributors.pickle')
+# disco.init_users_list(fake_users_list)
+disco.init_client()
+disco.build_collection_list()
+disco.build_user_matrix()
+print(disco.u2u_matrix)
+print()
