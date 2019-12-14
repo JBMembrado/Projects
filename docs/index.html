@@ -3,253 +3,399 @@
 
 <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <title>Stylish Portfolio - Start Bootstrap Template</title>
+    <title>Data from your discs</title>
 
-  <!-- Bootstrap Core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom Fonts -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+          rel="stylesheet" type="text/css">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
-  <!-- Custom CSS -->
-  <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
 
 </head>
 
 <body id="page-top">
 
-  <!-- Navigation -->
-  <a class="menu-toggle rounded" href="#">
-    <i class="fas fa-bars"></i>
-  </a>
-  <nav id="sidebar-wrapper">
-    <ul class="sidebar-nav">
-      <li class="sidebar-brand">
-        <a class="js-scroll-trigger" href="#page-top">Start Bootstrap</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#page-top">Home</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#about">About</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#services">Services</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#contact">Contact</a>
-      </li>
-    </ul>
-  </nav>
-
-  <!-- Header -->
-  <header class="masthead d-flex">
-    <div class="container text-center my-auto">
-      <h1 class="mb-1">Stylish Portfolio</h1>
-      <h3 class="mb-5">
-        <em>A Free Bootstrap Theme by Start Bootstrap</em>
-      </h3>
-      <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+<!-- Header -->
+<header class="masthead d-flex">
+    <div class="container text-center my-auto my-title">
+        <h1 class="mb-1">Data from your discs</h1>
+        <h3 class="mb-5">
+            <em>A look at the music industry through the Discogs open dataset</em>
+        </h3>
     </div>
     <div class="overlay"></div>
-  </header>
+</header>
 
-  <!-- About -->
-  <section class="content-section bg-light" id="about">
-    <div class="container text-center">
-      <div class="row">
-        <div class="col-lg-10 mx-auto">
-          <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
-          <p class="lead mb-5">This theme features a flexible, UX friendly sidebar menu and stock photos from our friends at
-            <a href="https://unsplash.com/">Unsplash</a>!</p>
-          <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">What We Offer</a>
+
+<!-- for facts : https://www.statista.com/topics/1639/music/ -->
+
+<!-- Intro -->
+<section class="content-section bg-light" id="intro">
+    <div class="container text-justify">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2>Why music industry ?</h2>
+                <p class="lead mb-5">
+                    Music has thoroughly evolved in the past decades and so did its industry. Genres appeared as well as
+                    new numerous labels that changed the music landscape. New technologies also changed the way music is
+                    consumed, both in the music support (numeric, MP3 …) and in the way it can be shared and discovered.
+                    <br>
+                    To grasp at the importance of the music industry, let us say that last year, it was worth <b>20
+                    billion $ only in the U.S</b>. Although online platforms such as Spotify are on the rise, records
+                        more popular
+                        each year, with a <b>+14% increase in 2018 for vinyls in the U.S</b>. Discogs is the number 1
+                        online worldwide records selling platform.
+                    <br>
+                    If you wish to know more about the technical details of our work, check our Github repo <a
+                        href="https://github.com/JBMembrado/discogs-data">here</a>.
+                </p>
+            </div>
         </div>
-      </div>
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2>Why Discogs ?</h2>
+                <p class="lead mb-5">
+                    We chose to use Discogs as our Dataset for the project.
+                    Discogs.com is an online records marketplace. It acts as a place for music collectors to buy/sell
+                    records, as well as track the evolution of the prices of releases they consider acquiring. Discogs
+                    is a social network as well, and users can connect to each other and share the list of their
+                    favorite records.
+                    <br>
+                    A useful feature of Discogs is its API along with a Python plugin that allows to easily browse and
+                    gather information about records, artists and labels from the database. Our aim is to download the
+                    latest data files (*XML* format) to create the skeleton of our dataset and then enrich it using the
+                    API or web-scraping to gather more relevant informations.
+                </p>
+            </div>
+        </div>
     </div>
-  </section>
+</section>
 
-  <!-- Services -->
-  <section class="content-section bg-primary text-white text-center" id="services">
+<!-- General study -->
+<section class="content-section" id="overview">
+    <div class="container text-justify">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2>Evolution of the number of releases during the 20th century</h2>
+                <p class="lead mb-5">Analyse</p>
+            </div>
+        </div>
+        <div class="col-lg-12 mx-auto"><img src="./img/number_of_releases.png" width="100%"
+                                            alt="Evolution of the number of casualties over the years"></div>
+        <div class="row">
+            <div class="col-lg-10 mt-4 mx-auto">
+                <p class="lead">Après ça  </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section bg-light">
+    <div class="container text-justify">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h4 class="">Speaking of time and evolution, let’s have a glance at the number of
+                    casualties from
+                    2014 to 2016:</h4>
+                <div class="col-lg-10 mx-auto"><img src="./img/casualties_history.png"
+                                                    alt="Evolution of the number of casualties over the years"></div>
+                <p class="lead mt-3">As expected, the number of casualties has decreased linearly over the years except
+                    for a bump in 2014. What is even more interesting is when we compare this evolution, to the
+                    evolution of the <b>traffic itself which increased by more than 5%</b> over the same period. It
+                    shows that this significant decrease over time is not due to lower traffic but to policies and
+                    technical upgrades made to the vehicles! <b>Road safety policies are working!</b>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <p class="lead">One last thing to look at from a global viewpoint is the repartition of casualties from
+                    2004 to 2016:</p>
+                <div class="col-lg-12 mx-auto"><img src="./img/casualties_classes.png" width="100%"
+                                                    alt="Evolution of the number of casualties over the years"></div>
+                <p class="lead">The first observation is that passengers make for around 25% of the accident casualties,
+                    with a majority of them being car passengers rather than coach ones. Moreover, <b>pedestrians
+                        represent more than 10% of the casualties</b>, which is a very significant part as they can only
+                    be impacted in specific circumstances in urban areas: they are almost always the victims rather than
+                    the person causing the accident. Finally, casualties still mainly concern drivers and riders: people
+                    who are allegedly responsible for taking every possible steps in order to avoid accidents. It could be
+                    explained in two ways: the high proportion of people taking their car alone, to commute for instance,
+                    and the increasing part of bike riders having road accidents.
+                    <br>
+                    Despite this context, the government has still taken no action to make wearing helmets compulsory
+                    for bike users.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container text-justify">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2>The danger of rush hours:</h2>
+                <p class="lead">Who has never been stuck in traffic? One could imagine that a reduced pace rhymes with
+                    less accidents? Or on the opposite, more cars on the road entails more accidents? We used our data
+                    to demonstrate the second proposition. While the trend looks alike for week days there is a huge
+                    difference with week-ends.</p>
+            </div>
+            <div class="col-lg-12"><img src="./img/week_rush.jpg" width="100%"
+                                        alt="Evolution of the number of casualties over the years"></div>
+
+            <div class="col-lg-10 mx-auto mt-3 mb-3">
+                <p class="lead mt-3">Rush hours are blatant at 8am and around 5pm, plus it is interesting to notice that
+                    the peak lasts longer in the afternoon: are people tired and thus less alert ? While on week-ends,
+                    people seem to be moving around lunch and tea time (do not forget we are talking about UK!).
+                    <br>
+                    In order to understand whether accidents related to commuting are due to traffic jams or just to the
+                    increase of drivers on the road, we compared rush hour in urban and rural areas during week days and
+                    week-ends.
+                </p>
+            </div>
+            <div class="col-lg-9 mx-auto">
+                <img width="100%" src="./img/wed_rur_urb.jpg" alt="">
+            </div>
+            <div class="col-lg-9 mx-auto">
+                <img width="100%" src="./img/sat_rur_urb.jpg" alt="">
+            </div>
+            <div class="col-lg-9 mx-auto">
+                <img width="100%" src="./img/sund_rur_urb.jpg" alt="">
+            </div>
+            <div class="col-lg-10 mx-auto mt-5">
+                <p class="lead">As one can see, rush hours are still seeable in rural areas even though they are less
+                    pronounced than for urban areas. What is interesting is that the difference between rural and urban
+                    areas decrease on Sunday: are people going to the countryside on Sunday ?
+                    <br><br>
+                    On the whole, reducing the number of vehicles involved in rush hours could led to a significant
+                    decrease of the number of accidents: commuting at odd hours (10am - 8pm for instance) is safer than
+                    commuting “like everyone else”.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section bg-light">
+    <div class="container text-justify">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2>Casualties likelihood</h2>
+                <p class="lead">
+                    <i>"Which features have the bigger correlation coefficient with the number of accidents?"</i> That’s
+                    the kind of question road safety experts must ask themselves everyday, in order to build efficient
+                    road safety actions.
+                </p>
+            </div>
+            <div class="col-lg-5 mx-auto">
+                <img width="100%" src="./img/table_features.PNG" alt="">
+            </div>
+            <div class="col-lg-10 mx-auto">
+                <p class="lead">
+                    Once we set aside the number of vehicles involved, the two most significant features are the <b>type of
+                    the area</b> (i.e. whether it is urban or rural) and the type of the road. The correlation between
+                    the number of casualties and these features was far above its correlation with the light conditions
+                    or the weather which are almost negligible unlike what people usually think! That’s quite
+                    surprising, thus we decided to dig deeper to understand and maybe explain this cliché.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container text-justify">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2>On the impact of weather</h2>
+                <p class="lead">
+                    The common knowledge says that driving when the weather is poor is more dangerous.
+                    Therefore, we tried to spot a difference in the number of accidents when the weather is poor
+                    or not.
+                    The problem is we do not know how often the weather is bad and therefore we do not have any proper
+                    normalization.
+                    For that reason we plotted the average number of casualties per accident given many different weather
+                    condition:
+                </p>
+            </div>
+            <div class="col-lg-5 mx-auto">
+                <img width="100%" src="./img/casualties_per_weather.png" alt="">
+            </div>
+            <div class="col-lg-10 mx-auto">
+                <p class="lead">
+                    But that plot showed that there isn’t much difference between different weather conditions.
+                    The second step was to find the most dangerous locations in the UK and to compute the
+                    frequencies of accidents when the weather is bad at these dangerous locations:
+                </p>
+            </div>
+            <div class="col-lg-5 mx-auto">
+                <img width="100%" src="./img/weather_ratio.png" alt="">
+            </div>
+            <div class="col-lg-10 mt-5 mb-5 mx-auto">
+                <p class="lead">
+                    The plot show that there is mostly no difference across these different locations, telling us that
+                    they are
+                    not
+                    more dangerous when the weather is bad. However there is a clear outlier that merits further work.
+                    It corresponds to the location (51.498, -0.497) which we checked on Google Maps:
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 pr-lg-2">
+                    <img width="100%" height="300px" src="./img/google_maps_weather_1.png" alt="">
+                </div>
+                <div class="col-lg-6">
+                    <img width="100%" height="300px" src="./img/google_maps_weather_2.png" alt="">
+                </div>
+            </div>
+            <div class="col-lg-10 mt-5 mx-auto">
+                <p class="lead">
+                    And the funny thing is that we discovered that this location was indeed particularly dangerous and
+                    that
+                    during bad weather it could be particularly difficult for a car on the right lane to be able to
+                    enter
+                    the road… So, act up UK!
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section bg-light">
+    <div class="container text-justify">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2>On the justification of insurance criteria</h2>
+                <p class="lead">
+                    Every driver has to be covered by a car insurance of which fares are a very sensitive topics,
+                    depending on age, experience and even gender. Bonuses are supposed to depend on established facts
+                    enabling the computation of the likelihood of having a car accident. For instance, some insurances
+                    offer bonuses for female driver: to what extent can our data support this advantage?
+                    <br>
+                    From 2005 to 2015, data shows that female drivers almost have half as much car accident than male
+                    drivers, justifying a bonuses for car insurance companies. Yet, we can not conclude that it is safer
+                    to drive for women, because the difference in the number of accident could be explained by a
+                    difference in the number of driver: yet, are men driving twice as much as women?
+                </p>
+            </div>
+            <div class="col-lg-5 mx-auto">
+                <img width="100%" src="./img/drivers_gender.jpg" alt="">
+            </div>
+            <div class="col-lg-10 mt-5 mx-auto">
+                <p class="lead">
+                    Is there any other features which could be taken into account to propose bonuses to client? We
+                    investigated the other features provided in the dataset and came to the following conclusions:
+                </p>
+                <ul class="lead">
+                    <li>The well-known maluses for young drivers, for instance drivers under 25 in the United States, is
+                        not
+                        justified by our dataset: young drivers even belong to one of the less accident-prone
+                        categories.
+                        However insurance companies own data about the proportion of young adult driving and can,
+                        therefore,
+                        draw a more relevant conclusion. We lack data to properly normalize our
+                        dataset.
+                    </li>
+                    <li>The same approach can be used for elderly which are even less accident-prone than young
+                        drivers.
+                    </li>
+                    <li>The peak between 26 and 45 years old could be explained by intense working activity inducing a
+                        fair
+                        amount
+                        and commuting, hence more risks of ending in a car accident.
+                    </li>
+                    <li>
+                        Similarly, there is a burst in the number of accident for urban-originated driver which could
+                        be
+                        taken into account by insurances: depending on where you learn to drive and where you
+                        predominantly
+                        drive.
+                    </li>
+
+                </ul>
+                <div class="row no-gutters mb-4">
+                    <div class="col-lg-6">
+                        <img width="100%" src="./img/drivers_age.jpg" alt="">
+                    </div>
+                    <div class="col-lg-6">
+                        <img width="100%" src="./img/drivers_area.jpg" alt="">
+                    </div>
+                </div>
+                <p class="lead">
+                    In a nutshell, this data is <b>highly valuable for insurance companies</b> because it helps
+                    computing the likelihood of car accident for a driver depending on several characteristics. Combined
+                    with the frequency of insured drivers it can build <b>a relevant overview of at-risk-drivers</b>.
+                    One also has to notice that combining such data can be quite <b>intrusive</b> for insured persons
+                    and goes against the concept of sympathy behind insurance.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container text-justify">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2>Conclusion</h2>
+                <p class="lead">
+                    The goal of this study was to aggregate and understand data on road accidents in the leading country
+                    for road safety in Europe: the United Kingdom. By feeding our datasets into the Big Data blackbox,
+                    we gained insights and highlighted trends with some surprises.
+                    <br>
+                    Choosing among the endless leads provided by the data has been a challenge. Yet, the biggest
+                    challenge encountered has been the lack of information on traffic itself which forced us into
+                    thinking
+                    differently and come up with innovative baselines.
+                    <br>
+                    Finally, studying road accidents has been a very interesting and challenging topic illustrating how
+                    data science has a highly positive and concrete impact on policies and government decisions.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer text-center">
     <div class="container">
-      <div class="content-section-heading">
-        <h3 class="text-secondary mb-0">Services</h3>
-        <h2 class="mb-5">What We Offer</h2>
-      </div>
-      <div class="row">
-        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-          <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-screen-smartphone"></i>
-          </span>
-          <h4>
-            <strong>Responsive</strong>
-          </h4>
-          <p class="text-faded mb-0">Looks great on any screen size!</p>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-          <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-pencil"></i>
-          </span>
-          <h4>
-            <strong>Redesigned</strong>
-          </h4>
-          <p class="text-faded mb-0">Freshly redesigned for Bootstrap 4.</p>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-          <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-like"></i>
-          </span>
-          <h4>
-            <strong>Favorited</strong>
-          </h4>
-          <p class="text-faded mb-0">Millions of users
-            <i class="fas fa-heart"></i>
-            Start Bootstrap!</p>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-mustache"></i>
-          </span>
-          <h4>
-            <strong>Question</strong>
-          </h4>
-          <p class="text-faded mb-0">I mustache you a question...</p>
-        </div>
-      </div>
+        <ul class="list-inline mb-5">
+            <li class="list-inline-item">
+                <a class="social-link rounded-circle text-white"
+                   href="https://github.com/Eagleseb/survive-your-commuting">
+                    <i class="icon-social-github"></i>
+                </a>
+            </li>
+        </ul>
+        <p class="text-muted small mb-0">Copyright &copy; Jan Waligorski, Jean-Baptiste Membrado, Thomas Petit-Jean, Alexandre Cionca</p>
     </div>
-  </section>
+</footer>
 
-  <!-- Callout -->
-  <section class="callout">
-    <div class="container text-center">
-      <h2 class="mx-auto mb-5">Welcome to
-        <em>your</em>
-        next website!</h2>
-      <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/template-overviews/stylish-portfolio/">Download Now!</a>
-    </div>
-  </section>
-
-  <!-- Portfolio -->
-  <section class="content-section" id="portfolio">
-    <div class="container">
-      <div class="content-section-heading text-center">
-        <h3 class="text-secondary mb-0">Portfolio</h3>
-        <h2 class="mb-5">Recent Projects</h2>
-      </div>
-      <div class="row no-gutters">
-        <div class="col-lg-6">
-          <a class="portfolio-item" href="#">
-            <span class="caption">
-              <span class="caption-content">
-                <h2>Stationary</h2>
-                <p class="mb-0">A yellow pencil with envelopes on a clean, blue backdrop!</p>
-              </span>
-            </span>
-            <img class="img-fluid" src="img/portfolio-1.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-6">
-          <a class="portfolio-item" href="#">
-            <span class="caption">
-              <span class="caption-content">
-                <h2>Ice Cream</h2>
-                <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
-              </span>
-            </span>
-            <img class="img-fluid" src="img/portfolio-2.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-6">
-          <a class="portfolio-item" href="#">
-            <span class="caption">
-              <span class="caption-content">
-                <h2>Strawberries</h2>
-                <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
-              </span>
-            </span>
-            <img class="img-fluid" src="img/portfolio-3.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-6">
-          <a class="portfolio-item" href="#">
-            <span class="caption">
-              <span class="caption-content">
-                <h2>Workspace</h2>
-                <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
-              </span>
-            </span>
-            <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Call to Action -->
-  <section class="content-section bg-primary text-white">
-    <div class="container text-center">
-      <h2 class="mb-4">The buttons below are impossible to resist...</h2>
-      <a href="#" class="btn btn-xl btn-light mr-4">Click Me!</a>
-      <a href="#" class="btn btn-xl btn-dark">Look at Me!</a>
-    </div>
-  </section>
-
-  <!-- Map -->
-  <section id="contact" class="map">
-    <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-    <br />
-    <small>
-      <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
-    </small>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer text-center">
-    <div class="container">
-      <ul class="list-inline mb-5">
-        <li class="list-inline-item">
-          <a class="social-link rounded-circle text-white mr-3" href="#">
-            <i class="icon-social-facebook"></i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="social-link rounded-circle text-white mr-3" href="#">
-            <i class="icon-social-twitter"></i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="social-link rounded-circle text-white" href="#">
-            <i class="icon-social-github"></i>
-          </a>
-        </li>
-      </ul>
-      <p class="text-muted small mb-0">Copyright &copy; Your Website 2019</p>
-    </div>
-  </footer>
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
     <i class="fas fa-angle-up"></i>
-  </a>
+</a>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Custom scripts for this template -->
-  <script src="js/stylish-portfolio.min.js"></script>
+<!-- Custom scripts for this template -->
+<script src="js/stylish-portfolio.min.js"></script>
 
 </body>
 
