@@ -74,7 +74,8 @@
                     <br>
                     A useful feature of Discogs is its API along with a Python plugin that allows to easily browse and
                     gather information about records, artists and labels from the database. Our aim is to download the
-                    latest data files (*XML* format) to create the skeleton of our dataset and then enrich it using the
+                    latest data files (<i>XML</i> format) to create the skeleton of our dataset and then enrich it using
+                    the
                     API or web-scraping to gather more relevant informations.
                 </p>
             </div>
@@ -87,19 +88,53 @@
     <div class="container text-justify">
         <div class="row">
             <div class="col-lg-10 mx-auto">
-                <h2>Evolution of the number of releases during the 20th century</h2>
-                <p class="lead mb-5">Analyse</p>
+                <h2>A global look at the evolution of the music industry</h2>
+                <p class="lead mb-5">A simple exploration of our dataset gives us the number of Master releases each
+                year. Each record in the Discogs database is represented by a unique <b>Master</b>, but can
+                    actually be attached to several <b>Release</b> entities. Each Release for a record is a
+                    commercially  distributed copy of the record. It corresponds to a year of release, a country in
+                    which it has been released, a physical support and a label. If we take for instance, the
+                    fan-favorite classic <i>Led Zeppelin
+                        I</i> record : it is associated to one Master entity, but 603 different Releases in vinyl,
+                    compact disc or cassette over several labels and reissues.
+                </p>
             </div>
         </div>
         <div class="col-lg-12 mx-auto"><img src="./img/number_of_releases.png" width="100%"
-                                            alt="Evolution of the number of casualties over the years"></div>
+                                            alt="Evolution of the number of Master and Releases over the years"></div>
         <div class="row">
             <div class="col-lg-10 mt-4 mx-auto">
-                <p class="lead">Après ça  </p>
+                <p class="lead">The number of Master released per year is linearly increasing starting in the 1950s.
+                    This evolution is indeed the actual evolution of the number of records that were released each
+                    year. The music industry is in good shape as we see that the increase of record production isn't
+                    about to stop !
+                    <br>
+                    The number of Releases per Master is also increasing in the 1960s, with a downward trend during the
+                    1990s. The average number of Releases per Master is obtained by counting the number of Releases
+                    for each Master each year, and dividing by the total number of Masters in this year. This
+                    evolution show a bump starting in the 1960s until the beginning of the 1980s. Two factors explain
+                    this :
+                    <ul>
+                        <li>here each Release is attached to its Master, and that is the year of the Master that
+                            prevails. This means that for our beloved <i>Led Zeppelin I</i> (this record is crazy
+                            good, I love it, go listen to it if you haven't already), all the 603 associated Releases
+                            count for the year 1968, that is the year of the first release. This means that older
+                            records are more likely to have more Releases associated than recent ones : they are
+                            more likely to have been reprinted since it was initially released.
+                        </li>
+                        <li>
+                            another factor explains the downfall during the 1980s : in 1983, <i>Philips</i>
+                        </li>
+
+                    </ul>
+                </p>
             </div>
         </div>
     </div>
 </section>
+
+
+
 
 <section class="content-section bg-light">
     <div class="container text-justify">
