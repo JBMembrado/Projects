@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Data from your discs</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+          rel="stylesheet" type="text/css">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+<!-- Header -->
+<header class="masthead d-flex">
+    <div class="container text-center my-auto my-title">
+        <h1 class="mb-1">Data from your discs</h1>
+        <h3 class="mb-5">
+            <em>A look at the music industry through the Discogs open dataset</em>
+        </h3>
+    </div>
+    <div class="overlay"></div>
+</header>
+
+
+<!-- for facts : https://www.statista.com/topics/1639/music/ -->
+
+<!-- Intro -->
+<section class="content-section bg-light" id="intro">
+    <div class="container text-justify">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2>Why the music industry ?</h2>
+                <p class="lead mb-5">
+                    Music has thoroughly evolved in the past decades and so did its industry. Genres appeared as well as
+                    new numerous labels that changed the music landscape. New technologies also changed the way music is
+                    consumed, both in the music support (numeric, MP3 …) and in the way it can be shared and discovered.
+                    <br>
+                    To grasp at the importance of the music industry, let us say that last year, it was worth <b>20
+                    billion $ only in the U.S</b>. Although online platforms such as Spotify are on the rise, records
+                        more popular
+                        each year, with a <b>+14% increase in 2018 for vinyls in the U.S</b>. Discogs is the number 1
+                        online worldwide records selling platform.
+                    <br>
+                    If you wish to know more about the technical details of our work, check our Github repo <a
+                        href="https://github.com/JBMembrado/discogs-data">here</a>.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2>Why Discogs ?</h2>
+                <p class="lead mb-5">
+                    We chose to use Discogs as our Dataset for the project.
+                    Discogs.com is an online records marketplace. It acts as a place for music collectors to buy/sell
+                    records, as well as track the evolution of the prices of releases they consider acquiring. Discogs
+                    is a social network as well, and users can connect to each other and share the list of their
+                    favorite records.
+                    <br>
+                    A useful feature of Discogs is its API along with a Python plugin that allows to easily browse and
+                    gather information about records, artists and labels from the database. Our aim is to download the
+                    latest data files (<i>XML</i> format) to create the skeleton of our dataset and then enrich it using
+                    the
+                    API or web-scraping to gather more relevant informations.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- General study -->
+<section class="content-section" id="overview">
+    <div class="container text-justify">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2>A global look at the evolution of the music industry</h2>
+                <p class="lead mb-5">A simple exploration of our dataset gives us the number of Master releases each
+                year. Each record in the Discogs database is represented by a unique <b>Master</b>, but can
+                    actually be attached to several <b>Release</b> entities. Each Release for a record is a
+                    commercially  distributed copy of the record. It corresponds to a year of release, a country in
+                    which it has been released, a physical support and a label. If we take for instance, the
+                    fan-favorite classic <i>Led Zeppelin
+                        I</i> record : it is associated to one Master entity, but 603 different Releases in vinyl,
+                    compact disc or cassette over several labels and reissues.
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-12 mx-auto">
+            <iframe  width="1000px" height="600px" frameborder="0" scrolling="no" src="./img/masterVSreleases.html"></iframe>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 mt-4 mx-auto">
+                <p class="lead">The number of Master released per year is linearly increasing starting in the 1950s.
+                    This evolution is indeed the actual evolution of the number of records that were released each
+                    year. The music industry is in good shape as we see that the increase of record production isn't
+                    about to stop !
+                    <br>
+                    The number of Releases per Master is also increasing in the 1960s, with a downward trend during the
+                    1990s. The average number of Releases per Master is obtained by counting the number of Releases
+                    for each Master each year, and dividing by the total number of Masters in this year. This
+                    evolution show a bump starting in the 1960s until the beginning of the 1980s. Two factors explain
+                    this :
+                    <ul>
+                        <li>Here each Release is attached to its Master, and that is the year of the Master that
+                            prevails. This means that for our beloved <i>Led Zeppelin I</i> (this record is crazy
+                            good, I love it, go listen to it if you haven't already), all the 603 associated Releases
+                            count for the year 1968, that is the year of the first release. This means that older
+                            records are more likely to have more Releases associated than recent ones : they are
+                            more likely to have been reprinted since it was initially released.
+                        </li>
+                        <li>
+                            Another factor explains the downfall during the 1980s : in 1982, <i>Philips</i> in a
+                            collective effort with Sony, launched the first Compact Disc. It quickly became the
+                            physical support of choice, replacing progressively the vinyl. Between the launch of the
+                            Compact Disc, and the death of the vinyl format at the beginning of the 1990s, every
+                            record was released both in CD and vinyl, effectively raising the number of Releases for
+                            each record.
+                        </li>
+                    </ul>
+                </p>
+                <p class="lead">
+                    TODO
+                    From the 50s, the post-World War II economic expansion had a huge impact on consumerism,
+                    especially in the U.S. Goods and services were created deliberately for young people as spending
+                    power skyrocketted. The access of music through the democratisation of vinyl created a huge
+                    expansion of the newborn music industry. We can hypothesize that the dip in the 70s comes
+                    respectively from the oil crash in 1973 and the energy crisis in 1979. These events led to a period
+                    of recession, affecting all the markets, including the music one. One could argue that the second
+                    dip in the 2000s was caused by the internet as music piracy exploded (the famous peer-to-peer
+                    website Nasper was launched in 1999) leading to a decline in CD sales, thus again affecting the
+                    industry. Surely, the financial crash of 2008 did not help. The huge peak in the recent years
+                    could be the development of many streaming platforms - as increasing internet data rates allowed
+                    continous streaming of media - democratizing even more various artists.
+                    <br>
+                    Notwithstanding this last point, we can distinguish a certain form of exhausation (i.e. if we
+                    compare this market with the demographic expansion) maybe caused by a saturation of various artists
+                    led by the streaming revolution.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Analysis of format popularity -->
+<section class="content-section bg-light" id="format">
+    <div class="container text-justify">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="">Music formats : from good old vinyl to digital files</h2>
+                <div class="col-lg-10 mx-auto">
+                    <iframe  width="800px" height="600px" frameborder="0" scrolling="no" src="./img/Support_perYears.html"></iframe>
+                </div>
+                <p class="lead mt-3">To corroborate what we just said above, let's have a look at the evolution of
+                    records formats from the 1950s. As expected, the vinyl had a golden age until the beginning of
+                    the 1990s, its death mainly caused by the arrival of the CD. But WOW, we just said that the CD
+                    appeared in 1982, and we see that we have data for CD records even in the 1950s. Impressive.
+                    Let's stop joking : the CD Releases are attached to their Master. That is, if a record released
+                    in 1968, for instance <i>Led Zeppelin I</i> was to be released in CD during the 1980s, it would
+                    still appear as a released in 1968 in the database, as it is the year its corresponding Master
+                    was released.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Analysis of genres -->
+<section class="content-section" id="genres">
+    <div class="container text-justify">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2>"So ... what kind of music are you into?"</h2>
+                <p class="lead mb-5">
+
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-12 mx-auto">
+            <iframe  width="1000px" height="600px" frameborder="0" scrolling="no" src="./img/Overall_Genres.html"></iframe>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 mt-4 mx-auto">
+                <p class="lead">
+                    Blablabla main genres
+
+                </p>
+            </div>
+            <div class="col-lg-12 mx-auto">
+                <iframe  width="1000px" height="600px" frameborder="0" scrolling="no" src="./img/Genres_perYears_NORM.html"></iframe>
+            </div>
+            <p class="lead">
+                Blablabla closer analysis
+
+            </p>
+            <div class="col-lg-12 mx-auto">
+                <iframe  width="1000px" height="600px" frameborder="0" scrolling="no" src="./img/Genres_Styles_Sunburst.html"></iframe>
+            </div>
+            <p class="lead">
+                Blablabla wow such interface much interactive
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Analysis by labels -->
+<section class="content-section bg-light" id="labels">
+    <div class="container text-justify">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="">Records labels : the art of the deal</h2>
+                <div class="col-lg-10 mx-auto">
+                    <iframe  width="800px" height="600px" frameborder="0" scrolling="no" src="./img/Labels_top10_perYears.html"></iframe>
+                </div>
+                <p class="lead mt-3">
+                    blablabla wow labels
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Conclusions -->
+<section class="content-section" id="conclusion">
+    <div class="container text-justify">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2>Conclusion</h2>
+                <p class="lead mb-5">
+                    in conclusion ....
+                </p>
+            </div>
+        </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer text-center">
+    <div class="container">
+        <ul class="list-inline mb-5">
+            <li class="list-inline-item">
+                <a class="social-link rounded-circle text-white"
+                   href="https://github.com/Eagleseb/survive-your-commuting">
+                    <i class="icon-social-github"></i>
+                </a>
+            </li>
+        </ul>
+        <p class="text-muted small mb-0">Copyright &copy; Jan Waligorski, Jean-Baptiste Membrado, Thomas Petit-Jean, Alexandre Cionca</p>
+    </div>
+</footer>
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/stylish-portfolio.min.js"></script>
+
+</body>
+
+</html>
