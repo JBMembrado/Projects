@@ -27,7 +27,7 @@ This project involved many aspect from data cleaning and filtering to the writti
 
 - **Jean-Baptiste:** Implementing the API usage of the discogs dataset. Writing the analysis of plots and coding the data story. Presenting the poster.
 
-- **Thomas:** Multiple analysis on the ADA Cluster, web-scrapping on Discogs' website.
+- **Thomas:** Multiple analysis on the ADA Cluster, web-scrapping on Discogs' website and analysis on the obtained data.
 
 - **Jan:** Implementing the plots on the data story. Writing the analysis of plots and coding the data story. Making first drafts of poster designs and layouts.
 
