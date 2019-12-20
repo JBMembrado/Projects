@@ -38,7 +38,7 @@
 </header>
 
 
-<!-- for facts : https://www.statista.com/topics/1639/music/ -->
+<!-- for for figures on the music industry : https://www.statista.com/topics/1639/music/ -->
 
 <!-- Intro -->
 <section class="content-section bg-light" id="intro">
@@ -100,8 +100,11 @@
                 </p>
             </div>
         </div>
-        <div class="col-lg-12 mx-auto"><img src="./img/number_of_releases.png" width="100%"
-                                            alt="Evolution of the number of Master and Releases over the years"></div>
+        <div class="col-lg-12 mx-auto">
+            <iframe  width="1000px" height="600px" frameborder="0" scrolling="no" src="./img/masterVSreleases.html"
+                     alt="Master and Releases evolution overtime"
+            ></iframe>
+        </div>
         <div class="row">
             <div class="col-lg-10 mt-4 mx-auto">
                 <p class="lead">The number of Master released per year is linearly increasing starting in the 1950s.
@@ -152,255 +155,73 @@
     </div>
 </section>
 
-<!-- Analysis of format popularity -->
-<section class="content-section bg-light">
+<!-- Analysis of genres -->
+<section class="content-section" id="genres">
     <div class="container text-justify">
         <div class="row">
             <div class="col-lg-10 mx-auto">
-                <h4 class="">Let's dive into the evolution of the music formats</h4>
-                <div class="col-lg-10 mx-auto"><img src="./img/evolution_formats.png"
-                                                    alt="Evolution of the number of casualties over the years"></div>
-                <p class="lead mt-3">To corroborate what we just said above, let's have a look at the evolution of
-                    records formats from the 1950s. As expected, the vinyl had a golden age until the beginning of
-                    the 1990s, its death mainly caused by the arrival of the CD. But WOW, we just said that the CD
-                    appeared in 1982, and we see that we have data for CD records even in the 1950s. Impressive.
-                    Let's stop joking : the CD Releases are attached to their Master. That is, if a record released
-                    in 1968, for instance <i>Led Zeppelin I</i> was to be released in CD during the 1980s, it would
-                    still appear as a released in 1968 in the database, as it is the year its corresponding Master
-                    was released.
+                <h2>"So ... what kind of music are you into?"</h2>
+                <p class="lead mb-5">
+
                 </p>
             </div>
+        </div>
+        <div class="col-lg-12 mx-auto">
+            <iframe  width="1000px" height="600px" frameborder="0" scrolling="no" src="./img/Overall_Genres.html"></iframe>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 mt-4 mx-auto">
+                <p class="lead">
+                    Blablabla main genres
+
+                </p>
+            </div>
+            <div class="col-lg-12 mx-auto">
+                <iframe  width="1000px" height="600px" frameborder="0" scrolling="no" src="./img/Genres_perYears_NORM.html"></iframe>
+            </div>
+            <p class="lead">
+                Blablabla closer analysis
+
+            </p>
+            <div class="col-lg-12 mx-auto">
+                <iframe  width="1000px" height="600px" frameborder="0" scrolling="no" src="./img/Genres_Styles_Sunburst.html"></iframe>
+            </div>
+            <p class="lead">
+                Blablabla wow such interface much interactive
+
+            </p>
         </div>
     </div>
 </section>
 
-<!-- Genre analysis -->
-<section class="content-section">
+<!-- Analysis by labels -->
+<section class="content-section bg-light" id="labels">
     <div class="container text-justify">
         <div class="row">
             <div class="col-lg-10 mx-auto">
-                <h2>A look at the evolution of genres</h2>
-                <p class="lead">
-                    Music nowadays is quite different from what people used to listen to in the 1950s : some genres
-                    faded into oblivion whereas some other appeared during the 21th century.
-                    <br>
-                    Analyse de Jan ici
-                </p>
-            </div>
-            <div class="col-lg-12"><img src="./img/evolution_of_genres_post_50_normalized.png" width="100%"
-                                        alt="Evolution of the proportion of discs per genre"></div>
-
-            <div class="col-lg-10 mx-auto mt-3 mb-3">
-                <p class="lead mt-3">Rush hours are blatant at 8am and around 5pm, plus it is interesting to notice that
-                    the peak lasts longer in the afternoon: are people tired and thus less alert ? While on week-ends,
-                    people seem to be moving around lunch and tea time (do not forget we are talking about UK!).
-                    <br>
-                    In order to understand whether accidents related to commuting are due to traffic jams or just to the
-                    increase of drivers on the road, we compared rush hour in urban and rural areas during week days and
-                    week-ends.
-                </p>
-            </div>
-            <div class="col-lg-9 mx-auto">
-                <img width="100%" src="./img/wed_rur_urb.jpg" alt="">
-            </div>
-            <div class="col-lg-9 mx-auto">
-                <img width="100%" src="./img/sat_rur_urb.jpg" alt="">
-            </div>
-            <div class="col-lg-9 mx-auto">
-                <img width="100%" src="./img/sund_rur_urb.jpg" alt="">
-            </div>
-            <div class="col-lg-10 mx-auto mt-5">
-                <p class="lead">As one can see, rush hours are still seeable in rural areas even though they are less
-                    pronounced than for urban areas. What is interesting is that the difference between rural and urban
-                    areas decrease on Sunday: are people going to the countryside on Sunday ?
-                    <br><br>
-                    On the whole, reducing the number of vehicles involved in rush hours could led to a significant
-                    decrease of the number of accidents: commuting at odd hours (10am - 8pm for instance) is safer than
-                    commuting “like everyone else”.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="content-section bg-light">
-    <div class="container text-justify">
-        <div class="row">
-            <div class="col-lg-10 mx-auto">
-                <h2>Casualties likelihood</h2>
-                <p class="lead">
-                    <i>"Which features have the bigger correlation coefficient with the number of accidents?"</i> That’s
-                    the kind of question road safety experts must ask themselves everyday, in order to build efficient
-                    road safety actions.
-                </p>
-            </div>
-            <div class="col-lg-5 mx-auto">
-                <img width="100%" src="./img/table_features.PNG" alt="">
-            </div>
-            <div class="col-lg-10 mx-auto">
-                <p class="lead">
-                    Once we set aside the number of vehicles involved, the two most significant features are the <b>type of
-                    the area</b> (i.e. whether it is urban or rural) and the type of the road. The correlation between
-                    the number of casualties and these features was far above its correlation with the light conditions
-                    or the weather which are almost negligible unlike what people usually think! That’s quite
-                    surprising, thus we decided to dig deeper to understand and maybe explain this cliché.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="content-section">
-    <div class="container text-justify">
-        <div class="row">
-            <div class="col-lg-10 mx-auto">
-                <h2>On the impact of weather</h2>
-                <p class="lead">
-                    The common knowledge says that driving when the weather is poor is more dangerous.
-                    Therefore, we tried to spot a difference in the number of accidents when the weather is poor
-                    or not.
-                    The problem is we do not know how often the weather is bad and therefore we do not have any proper
-                    normalization.
-                    For that reason we plotted the average number of casualties per accident given many different weather
-                    condition:
-                </p>
-            </div>
-            <div class="col-lg-5 mx-auto">
-                <img width="100%" src="./img/casualties_per_weather.png" alt="">
-            </div>
-            <div class="col-lg-10 mx-auto">
-                <p class="lead">
-                    But that plot showed that there isn’t much difference between different weather conditions.
-                    The second step was to find the most dangerous locations in the UK and to compute the
-                    frequencies of accidents when the weather is bad at these dangerous locations:
-                </p>
-            </div>
-            <div class="col-lg-5 mx-auto">
-                <img width="100%" src="./img/weather_ratio.png" alt="">
-            </div>
-            <div class="col-lg-10 mt-5 mb-5 mx-auto">
-                <p class="lead">
-                    The plot show that there is mostly no difference across these different locations, telling us that
-                    they are
-                    not
-                    more dangerous when the weather is bad. However there is a clear outlier that merits further work.
-                    It corresponds to the location (51.498, -0.497) which we checked on Google Maps:
-                </p>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 pr-lg-2">
-                    <img width="100%" height="300px" src="./img/google_maps_weather_1.png" alt="">
+                <h2 class="">Records labels : the art of the deal</h2>
+                <div class="col-lg-10 mx-auto">
+                    <iframe  width="800px" height="600px" frameborder="0" scrolling="no" src="./img/Labels_top10_perYears.html"></iframe>
                 </div>
-                <div class="col-lg-6">
-                    <img width="100%" height="300px" src="./img/google_maps_weather_2.png" alt="">
-                </div>
-            </div>
-            <div class="col-lg-10 mt-5 mx-auto">
-                <p class="lead">
-                    And the funny thing is that we discovered that this location was indeed particularly dangerous and
-                    that
-                    during bad weather it could be particularly difficult for a car on the right lane to be able to
-                    enter
-                    the road… So, act up UK!
+                <p class="lead mt-3">
+                    blablabla wow labels
                 </p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="content-section bg-light">
-    <div class="container text-justify">
-        <div class="row">
-            <div class="col-lg-10 mx-auto">
-                <h2>On the justification of insurance criteria</h2>
-                <p class="lead">
-                    Every driver has to be covered by a car insurance of which fares are a very sensitive topics,
-                    depending on age, experience and even gender. Bonuses are supposed to depend on established facts
-                    enabling the computation of the likelihood of having a car accident. For instance, some insurances
-                    offer bonuses for female driver: to what extent can our data support this advantage?
-                    <br>
-                    From 2005 to 2015, data shows that female drivers almost have half as much car accident than male
-                    drivers, justifying a bonuses for car insurance companies. Yet, we can not conclude that it is safer
-                    to drive for women, because the difference in the number of accident could be explained by a
-                    difference in the number of driver: yet, are men driving twice as much as women?
-                </p>
-            </div>
-            <div class="col-lg-5 mx-auto">
-                <img width="100%" src="./img/drivers_gender.jpg" alt="">
-            </div>
-            <div class="col-lg-10 mt-5 mx-auto">
-                <p class="lead">
-                    Is there any other features which could be taken into account to propose bonuses to client? We
-                    investigated the other features provided in the dataset and came to the following conclusions:
-                </p>
-                <ul class="lead">
-                    <li>The well-known maluses for young drivers, for instance drivers under 25 in the United States, is
-                        not
-                        justified by our dataset: young drivers even belong to one of the less accident-prone
-                        categories.
-                        However insurance companies own data about the proportion of young adult driving and can,
-                        therefore,
-                        draw a more relevant conclusion. We lack data to properly normalize our
-                        dataset.
-                    </li>
-                    <li>The same approach can be used for elderly which are even less accident-prone than young
-                        drivers.
-                    </li>
-                    <li>The peak between 26 and 45 years old could be explained by intense working activity inducing a
-                        fair
-                        amount
-                        and commuting, hence more risks of ending in a car accident.
-                    </li>
-                    <li>
-                        Similarly, there is a burst in the number of accident for urban-originated driver which could
-                        be
-                        taken into account by insurances: depending on where you learn to drive and where you
-                        predominantly
-                        drive.
-                    </li>
-
-                </ul>
-                <div class="row no-gutters mb-4">
-                    <div class="col-lg-6">
-                        <img width="100%" src="./img/drivers_age.jpg" alt="">
-                    </div>
-                    <div class="col-lg-6">
-                        <img width="100%" src="./img/drivers_area.jpg" alt="">
-                    </div>
-                </div>
-                <p class="lead">
-                    In a nutshell, this data is <b>highly valuable for insurance companies</b> because it helps
-                    computing the likelihood of car accident for a driver depending on several characteristics. Combined
-                    with the frequency of insured drivers it can build <b>a relevant overview of at-risk-drivers</b>.
-                    One also has to notice that combining such data can be quite <b>intrusive</b> for insured persons
-                    and goes against the concept of sympathy behind insurance.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="content-section">
+<!-- Conclusions -->
+<section class="content-section" id="conclusion">
     <div class="container text-justify">
         <div class="row">
             <div class="col-lg-10 mx-auto">
                 <h2>Conclusion</h2>
-                <p class="lead">
-                    The goal of this study was to aggregate and understand data on road accidents in the leading country
-                    for road safety in Europe: the United Kingdom. By feeding our datasets into the Big Data blackbox,
-                    we gained insights and highlighted trends with some surprises.
-                    <br>
-                    Choosing among the endless leads provided by the data has been a challenge. Yet, the biggest
-                    challenge encountered has been the lack of information on traffic itself which forced us into
-                    thinking
-                    differently and come up with innovative baselines.
-                    <br>
-                    Finally, studying road accidents has been a very interesting and challenging topic illustrating how
-                    data science has a highly positive and concrete impact on policies and government decisions.
+                <p class="lead mb-5">
+                    in conclusion ....
                 </p>
             </div>
         </div>
-    </div>
 </section>
 
 <!-- Footer -->
