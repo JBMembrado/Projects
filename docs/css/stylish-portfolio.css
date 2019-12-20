@@ -226,11 +226,16 @@ h6 {
     background-size: cover;
 }
 
+h2 {
+        text-align: center;
+}
+
 .callout h2 {
     font-size: 3.5rem;
     font-weight: 700;
     display: block;
     max-width: 30rem;
+    color: #009900;
 }
 
 .portfolio-item {
