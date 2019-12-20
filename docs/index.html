@@ -100,13 +100,13 @@
                 </p>
             </div>
         </div>
-        <div class="col-lg-12 mx-auto">
+        <div class="col-lg-14 mx-auto">
             <iframe  width="1000px" height="600px" frameborder="0" scrolling="no" src="./img/masterVSreleases.html"
                      alt="Master and Releases evolution overtime"
             ></iframe>
         </div>
         <div class="row">
-            <div class="col-lg-10 mt-4 mx-auto">
+            <div class="col-lg-12 mt-4 mx-auto">
                 <p class="lead">The number of Master released per year is linearly increasing starting in the 1950s.
                     This evolution is indeed the actual evolution of the number of records that were released each
                     year. The music industry is in good shape as we see that the increase of record production isn't
@@ -155,6 +155,45 @@
     </div>
 </section>
 
+<!-- Analysis of format popularity -->
+<section class="content-section bg-light" id="format">
+    <div class="container text-justify">
+        <div class="row">
+            <div class="col-lg-14 mx-auto">
+                <h2 class="">Music formats : from good old vinyl to digital files</h2>
+                <p class="lead mt-3">To corroborate what we just said above, let's have a look at the evolution of
+                    records formats from the 1950s. As expected, the vinyl had a golden age until the beginning of
+                    the 1990s, its death mainly caused by the arrival of the CD. But WOW, we just said that the CD
+                    appeared in 1982, and we see that we have data for CD records even in the 1950s. Impressive.
+                    Let's stop joking : the CD Releases are attached to their Master. That is, if a record released
+                    in 1968, for instance <i>Led Zeppelin I</i> was to be released in CD during the 1980s, it would
+                    still appear as a released in 1968 in the database, as it is the year its corresponding Master
+                    was released.
+                </p>
+            </div>
+            <div class="col-lg-14 mx-auto">
+                <iframe  width="800px" height="600px" frameborder="0" scrolling="no" src="./img/Support_perYears.html"></iframe>
+            </div>
+            <div>
+                <p class="lead mt-3">
+                    This plot also confirms the popular idea of the <b>vinyl comeback at the beginning of the 2010s</b>
+                    : we see its proportion clearly increasing. All the more that since this plot is normalized by the
+                    number of Releases per year, so the absolute number of vinyl Releases is a greater increase than
+                    what it appears to on this plot.
+                    <br>
+                    Beware of the vinyl peak during the late 2010s though : this plot shows the production trends of
+                    formats, not the sales, and according to <a
+                        href="https://pitchfork.com/features/article/is-vinyls-comeback-here-to-stay/" target="_blank">some
+                    sources</a>,
+                    signals show that this trend could
+                    finishing off soon.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <!-- Analysis of genres -->
 <section class="content-section" id="genres">
     <div class="container text-justify">
@@ -172,15 +211,40 @@
         <div class="row">
             <div class="col-lg-10 mt-4 mx-auto">
                 <p class="lead">
-                    Blablabla main genres
-
+                    Music genres evolved from the 1950s as trends are different nowadays than they were in the middle
+                    of the 20th century. Hard bop is not as popular now as it was in 1955, but you can listen to
+                    VaporTrap in 2019, which is not a full compensation for Hard Bop, but at least the name is cool.
+                    The big players in the room are <b>Rock, Electronic and Pop</b>. This is well known that those
+                    genres
+                    are pretty popular, and it is quite easy to explain why those take the place of most produced
+                    genres. Popular genres are profitable for music labels, and those labels push the production of
+                    records that sell.
                 </p>
             </div>
-            <div class="col-lg-12 mx-auto">
+            <div class="col-lg-14 mx-auto">
                 <iframe  width="1000px" height="600px" frameborder="0" scrolling="no" src="./img/Genres_perYears_NORM.html"></iframe>
             </div>
             <p class="lead">
-                Blablabla closer analysis
+                Now let's take a look at time evolution of those genres. Many points are interesting to notice :
+                <ul>
+                    <li>
+                        <b>Jazz was by far the most popular genre until 1957</b>, with Pop just
+                        behind. They are not the most popular genres overall because the records production before 1955 was
+                        five times lower than what it was in the 1980s. We see the maintain of Pop in the 1980s
+                        though, thanks to highly popular artists such as Michael Jackson and Prince with very popular records
+                        in <i>Thriller</i> in 1982 and <i>Purple Rain</i> in 1984. The same applies for Folk, a genre
+                       popular maintaining a mild popularity from the 1950s,  as the
+                        influence of Bob Dylan and consorts can be seen during the 1960s on the records production of
+                        the whole genre. In general, music labels try to ride the wave of popular trends to sell
+                        records.
+                    </li>
+                    <li>
+                        Funk is know to be at its creative peak in the 70s : <i>Maggot Brain</i> by Funkadelic in 1971,
+                        <i>Head Hunters</i> by Herbie Hancock in 1973 and <i>Curtis</i> and <i>Superfly</i> in 1970
+                        and 1972 by Curtis Mayfield. Once again, those popular albums at the beginning of the 1970s had
+                        an influence on the production of this genre a few years later, with a peak in 1976.
+                    </li>
+                </ul>
 
             </p>
             <div class="col-lg-12 mx-auto">
@@ -230,7 +294,7 @@
         <ul class="list-inline mb-5">
             <li class="list-inline-item">
                 <a class="social-link rounded-circle text-white"
-                   href="https://github.com/Eagleseb/survive-your-commuting">
+                   href="https://github.com/JBMembrado/discogs-data">
                     <i class="icon-social-github"></i>
                 </a>
             </li>
